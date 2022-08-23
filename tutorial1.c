@@ -9,9 +9,16 @@ int main(int argc, char const *argv[]) {
     pid_t id = fork(); // Chamada de sistema para criar processo filho
 
     while(1) {
-        var++;
+        if(id == 0) {
+            printf("Filhinho do papai\n");
+            var += 5;
+        }
+        else {
+            printf("Sou o Paizão\n");
+            var += 10;
+        }
         printf("PID (Process ID): %d | Var: %d\n\n", id, var);
-	    sleep(5); // Comente essa linha :)
+	    sleep(1); // Comente essa linha :)
     }
 
     return 0;
