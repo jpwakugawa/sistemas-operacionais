@@ -1,6 +1,7 @@
+nClock = os.clock()
 array = {}
 
-n = 10
+n = io.read("*n")
 for i=1,n do
 	array[i] = {}
 
@@ -26,4 +27,5 @@ function printArray()
 	end
 end
 
-printArray()
+if (n <= 10) then printArray() end
+print("Execution Time:", os.clock()-nClock)
