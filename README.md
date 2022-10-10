@@ -20,6 +20,11 @@ Série de tutoriais para compreender o funcionamento dos sistemas operacionais.
 	gcc -g -pthread exemplo.c -o exemplo
 	```
 
-### Links úteis
+* Gerar o Assembly do programa
+	```bash
+	gcc -S exemplo.c
+	```
+
+## Links úteis
 - [Unix Threads in C](https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2)
 
