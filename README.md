@@ -10,10 +10,15 @@ Série de tutoriais para compreender o funcionamento dos sistemas operacionais.
 
 ---
 * Compilamento em C
-  ```bash
-  gcc exemplo.c -o exemplo
-  ./exemplo
-  ```
+	```bash
+	gcc exemplo.c -o exemplo
+	./exemplo
+	```
+
+* Compilamento de Threads
+	```bash
+	gcc -g -pthread exemplo.c -o exemplo
+	```
 
 ### Links úteis
 - [Unix Threads in C](https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2)
