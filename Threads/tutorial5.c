@@ -46,6 +46,7 @@ int main(int argc, char* argv[]) {
   if (pthread_join(t4, NULL) != 0)
     return 8;
 
+  pthread_mutex_destroy(&mutex);
   printf("Number of mails: %d\n", mails);
 
   return 0;
