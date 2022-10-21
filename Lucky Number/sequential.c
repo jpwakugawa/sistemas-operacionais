@@ -4,7 +4,6 @@
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
-	clock_t begin = clock();
 
 	int n = atoi(argv[1]);
 	int* X = (int*)(malloc(n * n * sizeof(int)));
@@ -33,8 +32,5 @@ int main(int argc, char *argv[]) {
 
 	free(X);
 
-	clock_t end = clock();
-	double exec_time = end - begin;
-	printf("Execution Time: %.2f\n", exec_time);
 	return 0;
 }
