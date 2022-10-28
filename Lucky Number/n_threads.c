@@ -31,6 +31,7 @@ int main(int argc, char *argv[]) {
 			pthread_barrier_wait(&barrier1);
 		}
 		pthread_barrier_wait(&barrier2);
+		free(arg);
 	}
 
 	for(int j=0; j<n; j++) {
@@ -43,11 +44,6 @@ int main(int argc, char *argv[]) {
 
 	// Waiting for main() to finish
 	pthread_barrier_wait(&barrier2);
-
-	for(int j=0; j<n; j++) {
-		if(pthread_join(th[j], NULL) != 0)
-			perror("Failed to join thread");
-	}
 
 	if (n<=10) {
 
