@@ -1,0 +1,6 @@
+[package]
+name = "i_node"
+version = "0.0.1"
+authors = ["jpwakugawa"]
+
+[dependencies]
