@@ -1,7 +1,12 @@
-# Sistemas Operacionais
-
-## Descrição
+<h1 align="center">Sistemas Operacionais</h1>
+<h3 align="center">
 Série de tutoriais para compreender o funcionamento dos sistemas operacionais.
+</h3>
+<p align="center">
+<img src = https://img.shields.io/badge/SO-Linux-blueviolet>
+<img src = https://img.shields.io/badge/C-Linguagem%20-brightgreen>
+</p>
+
 
 ## Passo-a-passo
 1. Utilize Linux, essencial para salvar sua vida.
