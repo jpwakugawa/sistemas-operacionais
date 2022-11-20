@@ -1,19 +1,21 @@
 fn main() {
   let _end_direto_de_bloco = 8;
-  let bloco_de_disco = 1024;
-  let entrada_de_dir = 4;
+  let tamanho_bloco_disco:f64 = 1024.0;
+  let tamanho_entrada_dir:f64 = 4.0;
 
-  let arquivos_armazenados = (bloco_de_disco as f64) / (entrada_de_dir as f64);
-  println!("Número de arquivos armazenados em cada endereço de bloco do disco = {}", arquivos_armazenados);
+  let n_arquivos:f64 = tamanho_bloco_disco / tamanho_entrada_dir;
+  println!("Cada I-Node terá {} arquivos por bloco de disco", n_arquivos);
 
-  let blocos: [f64; 3] = [1100.0, 800.0, 300.0];
+  // O número de arquivos alocados em cada diretório
+  let diretorios: [f64; 3] = [1100.0, 800.0, 300.0];
+  let nomes: [String; 3] = ["/".to_string(), "/home".to_string(), "/home/hillsong".to_string()];
   let mut total:f64 = 0.0;
 
-  for bloco in blocos {
-    let result = bloco / arquivos_armazenados + 1.0;
+  for i in 0..3 {
+    let result = diretorios[i] / n_arquivos + 1.0;
     total += result.ceil();
-    println!("Blocos utilizados: {}...", result.ceil());
+    println!("Acessos utilizados no {}: {}...", nomes[i], result.ceil());
   }
 
-  println!("Total de blocos: {}", total);
+  println!("Total de acessos: {}", total);
 }
