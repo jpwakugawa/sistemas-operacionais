@@ -6,12 +6,14 @@ fn main() {
   let arquivos_armazenados = (bloco_de_disco as f64) / (entrada_de_dir as f64);
   println!("Número de arquivos armazenados em cada endereço de bloco do disco = {}", arquivos_armazenados);
 
-  let blocos = (1100 as f64) / arquivos_armazenados;
-  println!("Número de blocos utilizados no /: {}", blocos.ceil());
-  
-  let blocos = (800 as f64) / arquivos_armazenados;
-  println!("Número de blocos utilizados no /home: {}", blocos.ceil());
-  
-  let blocos = (300 as f64) / arquivos_armazenados;
-  println!("Número de blocos utilizados no /home/hillsong: {}", blocos.ceil());
+  let blocos: [f64; 3] = [1100.0, 800.0, 300.0];
+  let mut total:f64 = 0.0;
+
+  for bloco in blocos {
+    let result = bloco / arquivos_armazenados + 1.0;
+    total += result.ceil();
+    println!("Blocos utilizados: {}...", result.ceil());
+  }
+
+  println!("Total de blocos: {}", total);
 }
