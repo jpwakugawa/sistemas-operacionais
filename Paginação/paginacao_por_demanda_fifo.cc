@@ -67,6 +67,9 @@ int main() {
 	/*Serão lidos do teclado*/
 	unsigned int numeroprocesso, el;
 
+	int n_acessos = 0;
+	int n_falhas = 0;
+
 	int opcao;
 	do {
 
@@ -100,9 +103,11 @@ int main() {
 				bool falha_de_pagina = false;
 				int pagina = descobre_p(tamanho_p, tamanho_d, el);
 				int quadro_livre = -1;
+				n_acessos++;
 
 				if(!tabelas_de_pagina[numeroprocesso][pagina].valido) {
 					falha_de_pagina = true;
+					n_falhas++;
 					for(int i = 0 ; i < quantidade_de_quadros ; i++) {
 						if(quadros_livres[i] == true) {
 							quadro_livre = i;
@@ -114,8 +119,8 @@ int main() {
 				/* Achei um quadro livre */
 				if(quadro_livre != -1) {
 					tabelas_de_pagina[numeroprocesso][pagina].valido = true;
-					tabelas_de_pagina[numeroprocesso][pagina].quadro = quadro_livre;
 					tabelas_de_pagina[numeroprocesso][pagina].referencia = true;
+					tabelas_de_pagina[numeroprocesso][pagina].quadro = quadro_livre;
           insere_na_fila(quadro_livre);
 					quadros_livres[quadro_livre] = false;
 				}
@@ -134,9 +139,11 @@ int main() {
 								}
 								else {
 									tabelas_de_pagina[proc][pAlvo].valido = false;
+
 									tabelas_de_pagina[proc][pagina].valido = true;
 									tabelas_de_pagina[proc][pagina].referencia = true;
 									tabelas_de_pagina[proc][pagina].quadro = livre;
+
 									acheiLivre = true;
 								}
 								insere_na_fila(livre);
@@ -212,7 +219,7 @@ int main() {
 				* 		Primeiro parâmetro: quantidade total de acessos à memória
 				*		  Segunda parâmetro: quantidade de falhas de página
 				*/
-				imprime_estatisticas_de_falhas_de_pagina(100,100);
+				imprime_estatisticas_de_falhas_de_pagina(n_acessos,n_falhas);
 
 				/*******************/
 				/*Fim do seu código*/
