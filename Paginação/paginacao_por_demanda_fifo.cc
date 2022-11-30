@@ -117,6 +117,7 @@ int main() {
 					tabelas_de_pagina[numeroprocesso][pagina].quadro = quadro_livre;
 					tabelas_de_pagina[numeroprocesso][pagina].referencia = true;
           insere_na_fila(quadro_livre);
+					quadros_livres[quadro_livre] = false;
 				}
 				/* Não achei um quadro livre, preciso substituir
 				alguém */
@@ -139,6 +140,7 @@ int main() {
 									acheiLivre = true;
 								}
 								insere_na_fila(livre);
+								quadros_livres[livre] = false;
 							}
 						}
 					}
@@ -208,7 +210,7 @@ int main() {
 				/*
 				* APENAS alterar parâmetros da função abaixo:
 				* 		Primeiro parâmetro: quantidade total de acessos à memória
-				*		Segunda parâmetro: quantidade de falhas de página
+				*		  Segunda parâmetro: quantidade de falhas de página
 				*/
 				imprime_estatisticas_de_falhas_de_pagina(100,100);
 
