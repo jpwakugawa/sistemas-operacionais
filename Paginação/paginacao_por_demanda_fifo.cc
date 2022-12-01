@@ -185,6 +185,21 @@ int main() {
 				bool removido_com_sucesso;
 
 				/*Seu código*/
+				try {
+					int pagina_retirada = descobre_p(tamanho_p, tamanho_d, el);
+					int quadro_retirado = tabelas_de_pagina[numeroprocesso][pagina_retirada].quadro;
+
+					tabelas_de_pagina[numeroprocesso][pagina_retirada].valido = false;
+					tabelas_de_pagina[numeroprocesso][pagina_retirada].referencia = false;
+					remove_da_fila(quadro_retirado);
+					quadros_livres[quadro_retirado] = true;
+
+					removido_com_sucesso = true;
+				}
+				catch (...) {
+					removido_com_sucesso = false;
+				}
+
 
 				/*******************/
 				/*Fim do seu código*/
