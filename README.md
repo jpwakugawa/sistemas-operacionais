@@ -23,24 +23,24 @@ Série de tutoriais para compreender o funcionamento dos sistemas operacionais.
 3. Obedeça meus comentários, pode confiar :)
 
 ---
+* Compilamento em C++
+	```bash
+	g++ exemplo.cc -o exemplo.e
+	./exemplo
+	```
+	
 * Compilamento em C
 	```bash
-	gcc exemplo.c -o exemplo
+	gcc exemplo.c -o exemplo.e
 	./exemplo
 	```
 
 * Compilamento de Threads
 	```bash
-	gcc -g -pthread exemplo.c -o exemplo
+	gcc -g -pthread exemplo.c -o exemplo.e
 	```
 
 * Gerar o Assembly do programa
 	```bash
 	gcc -S exemplo.c
 	```
-
-
-## Links úteis
-- [Unix Threads in C](https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2)
-- [Lua Documentation](https://www.lua.org/manual/5.4/)
-
